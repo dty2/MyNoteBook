@@ -7,6 +7,5 @@
    - [get vmware](vmware.md)
    - [input method](input.md)
    - [choose terminal](terminal.md)
-   - [configure vim](vim.md)
    - [gitbook & github](gitbook.md)
 
