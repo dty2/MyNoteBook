@@ -1,16 +1,16 @@
 # Cool Start
 
 ## 故事
-我最早听说vim是在这个[视频](https://www.bilibili.com/video/BV1EW411u7th/?spm_id_from=333.999.0.0&vd_source=8836eda798f42e634172036484104534)([video](https://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo))  
+我最早听说Vim是在这个[视频](https://www.bilibili.com/video/BV1EW411u7th/?spm_id_from=333.999.0.0&vd_source=8836eda798f42e634172036484104534)([video](https://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo))  
 视频中的Carrie Anne小姐说这是最“牛”的编辑器且不接受反驳。  
 我当时并未意识到这意味着什么，但是命运的齿轮就此转动。  
-命中注定我与vim将会再次相遇。  
+命中注定我与Vim将会再次相遇。  
   
-再次遇见vim, 是在南大是[PA](https://github.com/NJU-ProjectN/ics-pa)实验中，也正是这个实验将我彻底地带入了拥有vim的世界中。  
-vim和普通编辑器有什么不同呢？  
+再次遇见Vim, 是在南大是[PA](https://github.com/NJU-ProjectN/ics-pa)实验中，也正是这个实验将我彻底地带入了拥有Vim的世界中。  
+Vim和普通编辑器有什么不同呢？  
 我认为其最大的不同就在于不用鼠标吧。  
 它严重影响了编辑速度  
-vim让文本编辑脱离鼠标成为现实  
+Vim让文本编辑脱离鼠标成为现实  
   
 Vim有很多很便捷的操作以及很酷的插件  
 但因为其巨大的准入门槛导致其劝退了相当数量的一部分人  
@@ -31,6 +31,7 @@ A3: 实践
 以下是我记不住的命令，为了方便我查询  
 - L/H 页尾/首
 - ys, cs, ds
+- guw gUw ~ 改变大小写
 - i inner a append
 - s sentence p paragraph
 - ctrl + [ 退出多光标模式

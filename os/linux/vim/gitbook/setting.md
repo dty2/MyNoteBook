@@ -18,7 +18,7 @@
 - `let mapleader= ' '` 空格作为leader键位
 - `au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif` 每次打开都回到上次编辑位置
 
-- wsl中，复制内容到windows剪贴板
+- Wsl中，复制内容到Windows剪贴板
     ```
     let s:clip = '/mnt/c/Windows/System32/clip.exe'
     if executable(s:clip)
