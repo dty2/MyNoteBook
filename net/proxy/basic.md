@@ -1,4 +1,4 @@
-# 基础配置
+# 新手配置
 ## Windows Proxy
 Windows下的代理软件我们选择V2rayN  
 V2rayN是windows下V2ray的客户端程序  

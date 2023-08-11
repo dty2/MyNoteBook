@@ -1,6 +1,4 @@
 # 介绍
 
 这是执着的电子书，这里记载着他与vim的故事  
-通过阅读，你可以在这里收获他当年的经历和一些与vim相关的知识  
-
-他的[配置]()  
+他的[配置](https://github.com/dty2/MyNoteBook/blob/main/os/linux/vim/.vimrc)  

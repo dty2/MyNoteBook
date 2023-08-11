@@ -142,8 +142,8 @@ let g:VM_maps['Add Cursor Down'] = '<C-j>'
 "----------------------"
 "   instant markdown   "
 "----------------------"
-autocmd Filetype markdown inoremap ;<leader> <Esc>/<++><CR>:nohlsearch<CR>c4l
-autocmd Filetype markdown nnoremap ;<leader> /<++><CR>:nohlsearch<CR>c4l
+autocmd Filetype markdown inoremap ,, <Esc>:MarkdownPreviewToggle<CR>
+autocmd Filetype markdown nnoremap ,, :MarkdownPreviewToggle<CR>
 autocmd Filetype markdown inoremap ,1 #<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
