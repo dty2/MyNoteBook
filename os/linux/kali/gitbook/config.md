@@ -24,7 +24,7 @@
   5. Vmware的首次启动配置，一直接受即可，个人不选择更新和接受跟踪反馈用户信息服务  
 ##### Gnome 美化  
 参考[视频](https://www.bilibili.com/video/BV1KR4y127dR/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=8836eda798f42e634172036484104534)  
-  * [Gnome-extension](https://extensions.gnome.org/) 初次登陆需要安装该扩展到Firefox   
+  * [Gnome-extension](https://extensions.gnome.org/) 初次登陆需要安装[Mozilla Addons](https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/)扩展到Firefox   
     - 插件：  
       1.  User Themes : 从user目录中加载shell主题
       2.  Dash to Dock : 一个在桌面底部的Dock
