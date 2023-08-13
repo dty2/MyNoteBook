@@ -36,10 +36,11 @@
 
 ### Airline & Airline Themes  
 * 介绍: 状态栏 + 美化
-* 安装: 如果终端不支持powerline字体，请自行下载(也可不下载，请往后看)
+* 安装: 获取powerline字体 `sudo apt-get install fonts-powerline` (也可不下载，请往后看)
 * 配置:  
   - `let g:airline#extensions#tabline#enabled = 1` 打开顶栏
-  - 不用下载powerline字体，请在vimrc文件中添加如下内容
+  - `let g:airline_powerline_fonts = 1` 打开powerline字体效果  
+  - 不用下载powerline字体，请在vimrc文件中添加如下内容(也能获得类似效果)  
     ``` vim script
     if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -109,7 +110,7 @@
 
   - E3: 在使用kali的时候，由于ssh并未设置相应的端口，导致下载插件失败，只需将端口由10808更改成10810即可。
 
-### Instant-markdown  
+### preview-markdown  
 * 介绍: 支持markdown预览
 * 安装: 获取npm和yarn `sudo apt install npm` `npm install --global yarn`  
 * 待解决:   

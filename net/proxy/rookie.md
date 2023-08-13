@@ -35,7 +35,7 @@ QV2ray是Linux下V2ray的客户端程序
 * 配置config.json文件(可以将其他客户端的配置文件导出到这里使用)  
   温馨提示：这里在不懂网络知识的情况下，要选择导出其他客户端的配置文件，以免过多的配置问题  
   以下内容仅供参考(只需更改地址即可)  
-  ``` json  
+  ```  json  
   {
     "log": {
       "access": "/var/log/v2ray/access.log",
@@ -45,9 +45,27 @@ QV2ray是Linux下V2ray的客户端程序
     "inbounds": [
       {
         "tag": "socks",
-        "port": 10810,
+        "port": 10808,
         "listen": "127.0.0.1",
         "protocol": "socks",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        },
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "allowTransparent": false
+        }
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
         "sniffing": {
           "enabled": true,
           "destOverride": [
@@ -69,7 +87,7 @@ QV2ray是Linux下V2ray的客户端程序
         "settings": {
           "vnext": [
             {
-              "address": "这里填地址即可",
+              "address": "80412c42-0fb8-6b74-1eb8-d58b05e67e50.nachoneko.ltd",
               "port": 80,
               "users": [
                 {
@@ -90,10 +108,28 @@ QV2ray是Linux下V2ray的客户端程序
               "Host": "tms.dingtalk.com"
             }
           }
+        },
+        "mux": {
+          "enabled": false,
+          "concurrency": -1
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
         }
       }
     ],
-    "routing": { //国内直连
+    "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
         {
@@ -116,9 +152,12 @@ QV2ray是Linux下V2ray的客户端程序
   ```  
 * 终端实现代理  
   根据使用的shell, 将以下内容填写到不同的shell配置文件中  
-  `export ALL_PROXY="socks5://127.0.0.1:10810"`  
+  ```  json  
+  export ALL_PROXY="socks5://127.0.0.1:10808"  
+  export http_proxy="http://127.0.0.1:10809"  
+  ```  
 * 系统设置代理：打开设置->网络->代理->手动->填入相关端口  
-  填写内容例如：127.0.0.1和10810  
+  填写内容例如：127.0.0.1和10808  
 * 使用  
   ``` bash shell
   # 启动
@@ -128,7 +167,12 @@ QV2ray是Linux下V2ray的客户端程序
   # 设置开机自启动
   sudo systemctl enable v2ray
   ```
-* 测试`curl -x socks5://127.0.0.1:10810 https://www.google.com -v` 
+* 测试`curl -x socks5://127.0.0.1:10808 https://www.google.com -v` 成功会输出google的html代码  
+* 使用proxychains强制走代理   
+  对于某些不会走socks5的应用，可以通过proxychains让其强制走代理  
+  在`/etc/proxychains4.conf` 中添加 `socks5 127.0.0.1 10808` ，并删除sock4那行即可   
+  之后即可在命令前加 `proxychains` 即可强制走代理  
+  如：`proxychains wget https://xxxxxx.com`  
 ## FAQ
 Q: 所有端口和配置都弄好了，但是还是不行，测试就会超时，长时间没反应。  
-A: 更新订阅，更换节点，重启终端(让更改后的配置文件生效），重启V2ray(让更改后的配置文件生效)
+A: 更新订阅，更换节点，重启终端(让更改后的配置文件生效)，重启V2ray(让更改后的配置文件生效)

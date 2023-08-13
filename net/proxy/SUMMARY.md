@@ -1,4 +1,4 @@
 # Table of contents
-* [介绍](README.md)
-* [基本配置](basic.md)
+* [简介](README.md)
+* [菜鸟配置](rookie.md)
 
