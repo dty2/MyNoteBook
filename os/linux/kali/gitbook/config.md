@@ -6,7 +6,7 @@
 参考[博客](https://www.junz.org/post/v2_in_linux/)和[白话文教程](https://toutyrater.github.io/)  
 详见[Proxy NoteBook](https://hunters-notebook.gitbook.io/proxy-notebook/basic)
 * zsh
-详见[Shell Notebook]()  
+详见[Shell Notebook](https://hunters-notebook.gitbook.io/shell-notebook/)  
 * Vim
 详见[Vim NoteBook](https://hunters-notebook.gitbook.io/vim-notebook/)
 * QQ
