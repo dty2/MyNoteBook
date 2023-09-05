@@ -34,7 +34,10 @@ A3: 实践
 - guw gUw ~ 改变大小写
 - i inner a append
 - s sentence p paragraph
+- D删到行尾，C改到行尾
+- H/L页首/尾
 - ctrl + [ 退出多光标模式
+- tab切换多光标的模式
 - ctrl + o 回到上次操作的位置
 - ctrl + i 回到上一次的上一次操作的位置
 - s + jl 分屏

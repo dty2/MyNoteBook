@@ -1,4 +1,4 @@
-# 安装
+# 安装 
 ## 准备安装(Windows + Kali)
 硬件：U盘 计算机  
 软件：[操作系统映像文件](https://www.kali.org/get-kali/#kali-platforms) 烧录软件([Rufus](https://rufus.ie/en/#))

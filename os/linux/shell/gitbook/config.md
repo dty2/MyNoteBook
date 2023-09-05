@@ -1,11 +1,11 @@
 # 配置
-#### 插件
+## 插件
 * **oh my zsh**  
   - 下载安装脚本  
-    `sudo proxychains wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`  
+    `sudo wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`  
   - `sh install.sh`安装   
   - `ZSH_THEME="your-theme"`设置主题  
-  ###### FAQ:
+## FAQ:
   Q1: bullet-train 主题在设置完成后会显示一个版本号  
   A1: 这是NVM版本号。如果想要关闭，则需更改主题文件。打开.oh-my-zsh目录，进入themes  
   找到bullet-train.zsh-theme，并进行如下设置   
