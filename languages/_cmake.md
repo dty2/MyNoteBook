@@ -9,39 +9,56 @@ cmakedefine在值为OFF/FALSE,0和未定义的变量时不会定义
 XXXConfig.h和XXXConfig.in.h:
 cmake对后者进行处理并拷贝到前者中
 
-Example:
+Example(聊天室):
 ``` CMake
-cmake_minimum_required(VERSION 3.10) 
-# 设置cmake的版本
+# 设置 CMake 最低版本要求
+cmake_minimum_required(VERSION 3.8)
+# 定义项目名称和版本
+project(client VERSION 1.0 LANGUAGES CXX)
 
-project(Tutorial VERSION 1.0) 
-# 设置项目名字和版本
+# 设置 C++标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_CXX_STANDARD 11) 
-# 设置C++的标准
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-# 当当前标准不满足时,自动退回上一个版本
+# 引入Boost库
+# 手动辅助指定库位置
+set(BOOST_ROOT "C:/environment dev/boost lib/boost")
+# 手动辅助指定头文件位置
+set(BOOST_INCLUDEDIR "${BOOST_ROOT}/include/boost-1_83/boost")
+# 手动辅助指定静态库和动态库位置
+set(BOOST_LIBRARYDIR "${BOOST_ROOT}/lib")
+# 找库文件所在位置
+find_package(Boost 1.83.0 REQUIRED COMPONENTS system)
 
-option(USE_MYMATH "Use tutorial provided math implementation" ON)
-# 自定义宏,默认ON,用于手动打开或者关闭某宏定义
+# 添加源文件
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
+set(SOURCES)
+list(APPEND SOURCES "${SRC_DIR}/main.cpp")
 
-configure_file(TutorialConfig.h.in TutorialConfig.h)
-# 配置头文件将CMake中的内容传递到C++文件中
-
-if(USE_MYMATH) 添加函数库文件
-  add_subdirectory(MathFunctions)
-  list(APPEND EXTRA_LIBS MathFunctions)
+# 判断
+if(Boost_FOUND)
+        message( STATUS "Boost FOUND !!!")
 endif()
 
-add_executable(Tutorial tutorial.cxx) 
-# 添加可执行文件
+# 生成可执行文件
+add_executable(client "${SOURCES}")
 
-target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS}) 
-# 目标文件链接库
+# 链接静态库
+target_link_libraries(client PRIVATE "${Boost_LIBRARIES}")
 
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
-target_include_directories(Tutorial PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           )
+# 为特定目标设置头文件目录
+target_include_directories(client
+        PUBLIC 
+        "${CMAKE_SOURCE_DIR}/include"
+        "${BOOST_INCLUDE_DIRS}"
+)
+
+# CMAKE_SOURCE_DIR 最外层CMakeLists.txt所在目录
+# CMAKE_CURRENT_SOURCE_DIR 当前CMakeLists.txt所在目录
+
+# 在build中 cmake ..  cmake --build . ./xxx.exe
+
+# 打包静态库
+# add_library(hello_library src/hello.cpp)
 ```
