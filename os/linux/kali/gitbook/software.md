@@ -17,3 +17,17 @@
   4. 重启后重新运行Vmware Player，会遇到问题`unable to install all modules vmware`。通过执行`sudo vmware-modconfig --console --install-all`来解决。执行上述指令之后需退出之前打开的Vmware Player，并重新打开Vmware Player重试即可。 
   5. Vmware的首次启动配置，一直接受即可，个人不选择更新和接受跟踪反馈用户信息服务  
 
+  FAQ: [Unable to install all modules.See log /tmp/vmware/vmware-{Host}-vmware-14067.log for details.(Exit code1)](https://superuser.com/questions/1713277/unable-to-install-all-modules-see-log-tmp-vmware-vmware-host-vmware-14067-log)
+  ``` bash shell
+  cd /usr/lib/vmware/modules/source
+  git clone https://github.com/mkubecek/vmware-host-modules
+  cd vmware-host-modules
+  git checkout workstation-16.2.3
+  make
+  tar -cf vmnet.tar vmnet-only
+  tar -cf vmmon.tar vmmon-only
+  mv vmnet.tar /usr/lib/vmware/modules/source/
+  mv vmmon.tar /usr/lib/vmware/modules/source/
+  vmware-modconfig --console --install-all
+  ```  
+

@@ -18,34 +18,34 @@
   - Q2: Icon theme的安装脚本好像有些问题，会出现以下报错。这边建议直接通过[压缩包](https://www.pling.com/s/Gnome/p/1686927)解压，手动安装  
     `sed:无法读取 /home/hunter/.local/share/icons/Nordzy-dark/actions/32/dialog-selectors.svg`  
 
-## i3 全家福  
+## i3 全家福 
+### 第一版
 * i3 + polybar + picom + rofi + alacritty + ...
 * 配置i3
   - 安装i3 + 删除i3status:  
     `sudo apt install i3` + `sudo apt remove i3status` 删除默认的status(因为我们选用tolybar，所以就不用i3带的status了)  
-  - 安装必配软件:  
-    - light(无配置)  
-    - pluseaudio(无配置)  
-    - variety + feh 换壁纸(无配置):  
-      `sudo apt install variety` + `sudo apt install feh` variety 一个管理壁纸的工具，variety想要在i3上运行需要feh或者是nitrogen的支持(参考脚本里的内容 `For simple WMs, use either feh or nitrogen`) 类似的解决问题方案如[油管视频](https://www.youtube.com/watch?v=zplxmG8Y-XU)   
-    - i3lock-color:  
-      原生i3lock不支持色彩等设定，因此这里我们选择手动编译github上的[i3lock-color](https://github.com/Raymo111/i3lock-color)  
-      1. 配置依赖(温馨提示:这是Debain的依赖)  
-      `sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev`(小声bb: 宝宝级别的依赖了，从编译器到链接器，啥都有)  
-      2. `./build.sh` + `./install-i3lock-color.sh`  
-      3. 配置[脚本]()lock* ，将脚本放置到 `~/.config/i3` 目录下。  
-    - 
-
+  - 控制硬件:  
+    - 亮度light(无配置)  
+    - 音量pluseaudio(无配置)  
+  - variety + feh 换壁纸(无配置):  
+    `sudo apt install variety` + `sudo apt install feh` variety 一个管理壁纸的工具，variety想要在i3上运行需要feh或者是nitrogen的支持(参考脚本里的内容 `For simple WMs, use either feh or nitrogen`) 类似的解决问题方案如[油管视频](https://www.youtube.com/watch?v=zplxmG8Y-XU)   
+  - i3lock-color:  
+    原生i3lock不支持色彩等设定，因此这里我们选择手动编译github上的[i3lock-color](https://github.com/Raymo111/i3lock-color)  
+    1. 配置依赖(温馨提示:这是Debain的依赖)  
+    `sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev`(小声bb: 宝宝级别的依赖了，从编译器到链接器，啥都有)  
+    2. `./build.sh` + `./install-i3lock-color.sh`  
+    3. 配置[脚本]()lock* ，将脚本放置到 `~/.config/i3` 目录下。  
   - 配置config，在 `~/.config/i3` 中添加config文件  
   - 添加其他脚本到`~/.config/i3` 目录下  
     - bootpolybar*  
     - rt* (roggle touchpad)   
-* 配置tolybar  
-  - 安装tolybar `sudo apt install tolybar`  
+* 配置polybar  
+  - 安装polybar `sudo apt install polybar`  
   - 配置
 
-* 配置  
+* 配置rofi
+  - 配置文件
 
 * FAQ:  
-  - Q1: 为什么需要light，pluseaudio，tolybar等软件?  
+  - Q1: 为什么需要light，pluseaudio，polybar等软件?  
     A1: 因为i3只是个窗口管理器，没有其他功能。所以 ，电源，音量等调节控制需要额外的控制软件进行控制。  
