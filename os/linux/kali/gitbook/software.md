@@ -31,3 +31,7 @@
   vmware-modconfig --console --install-all
   ```  
 
+## Develop Environment
+```
+sudo apt install build-essential # build-essential packages, include binary utilities, gcc, make, and so on
+```

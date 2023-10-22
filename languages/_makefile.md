@@ -44,9 +44,9 @@ bar: a.c b.c c.c
 
 区别shell与makefile中的变量引用
 shell:
-$(echo hello) 或者是 `echo hello` 为命令引用
-$xxx 或者是 ${} 为变量引用
-makefile: $() 变量引用
+\$(echo hello) 或者是 `echo hello` 为命令引用
+\$xxx 或者是 \${} 为变量引用
+makefile: \$() 变量引用
 
 区别通配符与正则表达式
 makefile或shell: *表示通配符，% 是匹配符
@@ -54,7 +54,7 @@ regex: .表示通配符，* 则表示匹配任意次数
 
 Example:
 ``` Makefile
-Makefile内容
+# Makefile内容
 NAME=
 HOME = /home/hunter
 
@@ -83,7 +83,7 @@ clean:
 ```
 
 ``` Makefile
-build.mk内容
+# build.mk内容
 # compilation flags
 CC := gcc
 LD := gcc
