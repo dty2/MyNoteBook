@@ -51,6 +51,8 @@
     let g:airline_symbols.dirty='⚡'
     endif
     ```  
+    FAQ1: 获取字体命令不生效则手动上powerline仓库[去安装](https://github.com/powerline/fonts)
+    FAQ2: 如果你在使用wsl2的话，需要你检查你的windows是否有字体集，如果没有则需要在windows上安装相应字体集，并在终端模拟器上进行配置
 ### Tagbar 
 * 介绍: 标签栏
 * 安装: 获取ctags 执行`sudo install apt exuberant-ctags`下载ctags  
@@ -89,7 +91,7 @@
        --with-python3-command=python3
        ```
     4. 查询cpu数量`cat /proc/cpuinfo | less` (ps:查看逻辑cpu数量)  
-    4. `sudo make -j8` + `sudo make install`  
+    4. `sudo make -j8` + `sudo make install`  (ps:看vim官方编译教程，上面要求命令执行在固定位置)
     5. 查看Vim版本`vim --version`,看是否有+python3  
   - 安装Coc nvim
   - 获取nodejs和npm `sudo apt install nodejs` + `sudo apt install npm`(ps:也可按照github上的指示进行安装)

@@ -1,3 +1,8 @@
+---
+tldr:
+too long don't read
+更加精简的man，实战版man
+ps:刚下载的话需要更新tldr --update
 
 ---
 gcc:
