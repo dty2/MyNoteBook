@@ -1,4 +1,14 @@
 ---
+git rm -rf --cached .
+清除git缓存
+用于在.gitignore 添加了新内容(之前不在.gitignore中却已经提交过)之后不生效
+
+---
+tree:
+-d 只显示目录
+-L x 显示到x级目录
+
+---
 tldr:
 too long don't read
 更加精简的man，实战版man

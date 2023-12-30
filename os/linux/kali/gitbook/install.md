@@ -38,7 +38,7 @@ exit #退出x2
 2. 以管理员身份打开终端(win + r运行cmd,按下ctrl + shift + enter)， 使用命令行删除kali启动文件
 ``` bash shell
 diskpart
-listdisk
+list disk
 select disk 0 # 只有0号盘，那就选0号盘，如果有其他盘，根据你kali安装的位置来进行选择
 list partition
 select partition 1 # 选择系统所在分区
