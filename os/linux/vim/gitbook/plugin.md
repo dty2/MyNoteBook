@@ -76,25 +76,13 @@
 ### Easymotion  
 * 介绍: 闪现
 
-### Coc nvim && tabnine
-* 介绍: 自动补全
-* 安装: 
-  - 获取 Vim(+python3) :  
-    1. `git clone @github.com:vim/vim.git`  
-    2. `sudo apt install python3` + `sudo apt install python3-dev`  
-    3. 配置参数  
-       ``` bash shell
-       ./configure \
-       --with-features=huge \
-       --enable-fontset \
-       --enable-python3interp \
-       --with-python3-command=python3
-       ```
-    4. 查询cpu数量`cat /proc/cpuinfo | less` (ps:查看逻辑cpu数量)  
-    4. `sudo make -j8` + `sudo make install`  (ps:看vim官方编译教程，上面要求命令执行在固定位置)
-    5. 查看Vim版本`vim --version`,看是否有+python3  
-  - 安装Coc nvim
-  - 获取nodejs和npm `sudo apt install nodejs` + `sudo apt install npm`(ps:也可按照github上的指示进行安装)
+### Coc nvim && tabnine && clangd
+* Coc nvim介绍: 自动补全平台
+* Coc nvim安装: 
+  - 按照版本要求安装nodejs，我们通过nvm来安装
+    安装nvm`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash` ps:重启终端使其生效，安装nodejs`nvm install 16.18.0`(ps:注意版本！！！官方的readme说大于14.14.0是不行的，进入vim就报错的话，报错里会有一行说版本小于16.18.0)
+  - 通过插件管理器安装coc nvim即可
+* tabnine安装:
   - 安装tabnine `:CocInstall coc-tabnine`
 * 配置:  
   - `:CocConfig` 在打开文件中添加  
@@ -114,6 +102,4 @@
 
 ### preview-markdown  
 * 介绍: 支持markdown预览
-* 安装: 获取npm和yarn `sudo apt install npm` `npm install --global yarn`  
-* 待解决:   
-  遇到个奇怪的问题，我在.vimrc中设置了`let g:mkdp_auto_close = 1`和`let g:mkdp_auto_open = 1`, 但是貌似并未起作用。并且，当我用nerdtree打开新的md文件时，先前预览的文件并不会消失，反而会打开一个名字和之前预览的文件一样的预览，但是该预览并没有内容。虽然也会打开新的预览文件，但是之前的并未关闭。(个人猜测可能是auto close设置并未生效)虽然并不影响使用，但是比较难受。  
+* 安装: 需要nodejs和xdg-utils(可能需要)

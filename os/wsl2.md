@@ -1,9 +1,8 @@
-详情见[官方教程](https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+安装详情见[官方教程](https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
 
 FAQ:
 Q1:
-无法将磁盘“C:\Users\dongt\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\LocalState\ext4.vhdx”附加到 WSL2： 系统找不到指定的文件。Error code: Wsl/Service/CreateInstance/MountVhd/HCS/ERROR_FILE_NOT_FOUND
-
+无法将磁盘“C:\Users\dongt\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\LocalState\ext4.vhdx”附加到 WSL2： 系统找不到指定的文件。Error code: Wsl/Service/CreateInstance/MountVhd/HCS/ERROR_FILE_NOT_FOUND  
 A*5:
 * 检查磁盘文件
   打开磁盘管理工具并查看是否可以找到ext4.vhdx文件3。
@@ -18,8 +17,7 @@ A*5:
 
 **A5解决问题**
 
-Q2:WSL2配合V2rayN使用
-
+Q2:WSL2配合V2rayN使用  
 A:
 * 开启V2rayN的局域网连接
 首先，你需要在Windows的V2rayN客户端上开启允许来自局域网的连接2。
@@ -42,20 +40,18 @@ Cloning into 'tldr'...
 fatal: unable to access 'https://github.com/tldr-pages/tldr.git/': Proxy CONNECT aborted
 tldr: Received ExitFailure 128 when running
 Raw command: git clone https://github.com/tldr-pages/tldr.git
-Run from: /home/hunter/.local/share/tldr
-
+Run from: /home/hunter/.local/share/tldr  
 A:
 设置git代理
-```
+``` bash
 git config --global http.proxy http://172.17.0.1:10809
 git config --global http.proxy https://172.17.0.1:10809
 ```
 其中我的代理服务器地址为什么是172.17.0.1？因为这是在wsl2中使用windows中的V2rayN，所以代理服务器地址应该是我的Windows的IP地址，通过`cat /etc/resolv.conf`查询
 
-Q4:curl: (56) Proxy CONNECT aborted
-
+Q4:curl: (56) Proxy CONNECT aborted  
 A:
-```
+``` bash
 export http_proxy=http://172.17.0.1:10809
 export https_proxy=http://172.17.0.1:10809
 ```

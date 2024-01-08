@@ -16,6 +16,7 @@
 - `set shiftwidth=4` 智能缩进为4个空格
 - `set clipboard=unnamedplus` 复制到系统剪贴板
 - `let mapleader= ' '` 空格作为leader键位
+
 - `au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif` 每次打开都回到上次编辑位置
 
 - Wsl中，复制内容到Windows剪贴板
